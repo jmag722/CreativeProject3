@@ -1,0 +1,73 @@
+html {
+    background: url("background2.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+}
+
+.toolbar {
+    position: absolute;
+    top: 0px;
+    opacity:.75;
+    padding:15px;
+    margin:0px;
+    width: 100%;
+    text-align:left;
+    color:black;
+    background-color: white;
+}
+
+#title {
+    padding-top: 5px;
+    font-size: 50px;
+    font-family: arial;
+    color: black;
+}
+
+#caption {
+    text-align: left;
+    padding: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 18px;
+}
+
+#date {
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #505050;
+}
+
+#frame {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    opacity: .75;
+    color: black;
+    background-color: white;
+    text-align: center;
+    width: 65%;
+    height: 85%;
+    display: inline-block;
+    /*when this line is coupled with the parent having text-align:center, you can center the div easy*/
+}
+
+#POD {
+    margin-top:35px;
+    padding-top: 25px;
+    /*padding-bottom:25px;*/
+    height: 40%;
+    width: 40%;
+    display: inline-block;
+}
+
+#POD img {
+    opacity: 1;
+    border-radius: 5px;
+    border: 10px solid rgba(255, 255, 255, .35);
+    height: 100%;
+    width: 100%;
+}
