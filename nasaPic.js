@@ -21,7 +21,7 @@ app.controller('myCtrl', function($scope, $http) {
             $scope.image = response.data.url;
             $scope.date = response.data.date;
         });
-
+        
     });
     
 
