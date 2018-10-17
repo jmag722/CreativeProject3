@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NASA Fan Near Earth Objects</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="neos.js"></script>
+</head>
+
+<body>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="neos.html"><img class="navbar-brand" src="logo.png"/></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="nasaPic.html">Daily Pic</a></li>
+                        <li class="active"><a href="neos.html">NEOs</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid text-center">
+            <div class="row content">
+                <div class="col-sm-2 sidenav">
+
+                </div>
+                <div class="col-sm-8 text-left">
+
+                    <div class="page-header">
+                        <h1>NASA Near Earth Object Radar</h1>
+
+                        <p>NASA tracks any object that passes by Earth. Below is a list of the recent asteroids. </p>
+
+                        <div id="neos_error"></div>
+
+                        <form id="neos-form">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="form-group col-lg-4">
+                                        <label for="neos-date">Enter new date:</label>
+                                        <input type="text" ng-model="neosDate" placeholder="YYYY-MM-DD">
+                                        <label for="neos-date">NOTE: Date must be in the appropriate format and must hit Submit!</label>
+                                    </div>
+                                    <div class="form-group col-lg-1 form-submit-date">
+                                        <button ng-click="dateSubmit()" class="btn-default btn" type="button">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <table class="table" id="neos-results">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Asteroid ID</th>
+                                    <th scope="col">Close Approach Date</th>
+                                    <th scope="col">Missing Distance (miles)</th>
+                                    <th scope="col">Estimated Velocity (miles/hour)</th>
+                                    <th scope="col">Potentially Dangerous?</th>
+                                </tr>
+                            </thead>
+                            <tbody id="neos-results-body">
+                                <tr ng-repeat="x in info">
+                                    <td ng-if="$odd" style="background-color:#f1f1f1">{{x.ID}}</td>
+                                    <td ng-if="$even">{{x.ID}}</td>
+                                    <td ng-if="$odd" style="background-color:#f1f1f1">{{x.DATE}}</td>
+                                    <td ng-if="$even">{{x.DATE}}</td>
+                                    <td ng-if="$odd" style="background-color:#f1f1f1">{{x.DISTANCE}}</td>
+                                    <td ng-if="$even">{{x.DISTANCE}}</td>
+                                    <td ng-if="$odd" style="background-color:#f1f1f1">{{x.VELOCITY}}</td>
+                                    <td ng-if="$even">{{x.VELOCITY}}</td>
+                                    <td ng-if="$odd" style="background-color:#f1f1f1">{{x.HAZARDOUS}}</td>
+                                    <td ng-if="$even">{{x.HAZARDOUS}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-2 sidenav">
+
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="page-footer font-small blue">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2018 Copyright:
+                <a href="https://www.nasa.gov" target="new"> NASA.com</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+
+    </div>
+</body>
+
+</html>
